@@ -9,7 +9,10 @@ add_test("http://www.abc.com/random.html", "abc.com", tests)
 add_test("http://www.abc.com/hello/random.html", "abc.com", tests)
 add_test("http://www.abc.com/hello/random.html", "abc.com", tests)
 add_test("www.abc.com", "abc.com", tests)
-add_test("http://abc.com", "abc.com", tests)
+add_test("http://mdn.firefox.com", "mdn.firefox.com", tests)
+add_test("", "", tests)
+add_test("www.google.co.in", "google.co.in", tests)
+add_test("https://internshala.com/internship/detail/python-development-backend-work-from-home-job-internship-at-primenumbers-technologies1676367769", "internshala.com", tests)
 
 def domain_name(url):
     parts = url.split("/")
@@ -22,12 +25,7 @@ def domain_name(url):
         full_domain.remove("www")
     
     result = ".".join(full_domain).strip()
-    print(url + " => " + result)
     return result
         
-
-# for i in range(len(tests)):
-#     print(domain_name(**tests[i]["input"]))
-
 print(test(domain_name, tests))
 
