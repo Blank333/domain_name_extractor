@@ -1,6 +1,8 @@
 def test(command, tests):
+    result = []
     for i in range(len(tests)):
-        return True if command == tests[i]["output"] else False
+        result.append(True if command(**tests[i]["input"]) == tests[i]["output"] else False)
+    return result
 
 def add_test(input, output, tests):
     tests.append({
